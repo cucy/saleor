@@ -52,6 +52,9 @@ RUN SECRET_KEY=dummy python3 manage.py collectstatic --no-input
 EXPOSE 8000
 ENV PORT 8000
 
+ENV INTERNAL_IPS "192.168.1.51,*,127.0.0.1"
+
+
 ENV PYTHONUNBUFFERED 1
 ENV PROCESSES 4
 CMD ["uwsgi", "/app/saleor/wsgi/uwsgi.ini"]
